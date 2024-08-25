@@ -15,15 +15,14 @@
     <div class="container main">
         <h1>Популярные товары</h1>
         <div class="products">
-            <?php for($i = 0; $i < 5; $i++): ?>
+            <?php for($i = 0; $i < count($data) ; $i++): ?>
             <div class="product">
                 <div class="image">
-                    <img src="/public/img/watch.jpg" alt="Товар">
+                    <img src="/public/img/<?=$data[$i]['img']?>" alt="<?=$data[$i]['title']?>">
                 </div>
-                <h3>Крутой товар</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi cumque ex necessitatibus
-                    totam voluptatem. Accusantium explicabo fuga nobis provident quaerat.</p>
-                <a href="/product/1"><button class="btn">Детальнее</button></a>
+                <h3><?=$data[$i]['title']?></h3>
+                <p><?=$data[$i]['anons']?></p>
+                <a href="/product/<?=$data[$i]['id']?>"><button class="btn">Детальнее</button></a>
             </div>
             <?php endfor; ?>
         </div>

@@ -1,6 +1,8 @@
 <?php
     class Home extends Controller {
         public function index() {
-            $this->view('home/index');
+            $products = $this->model('Products');
+
+            $this->view('home/index', $products->getProductsLimited("id", 5));
         }
     }
