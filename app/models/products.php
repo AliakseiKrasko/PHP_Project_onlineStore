@@ -22,5 +22,10 @@
             $result = $this->_db->query("SELECT * FROM `products` WHERE `category` = '$category' ORDER BY `id` DESC");
             return $result->fetchAll(PDO::FETCH_ASSOC);
          }
+
+         public function getOneProduct($id) {
+            $result = $this->_db->query("SELECT * FROM `products` WHERE `id` = '$id'");
+            return $result->fetch(PDO::FETCH_ASSOC);
+         }
     
     }
