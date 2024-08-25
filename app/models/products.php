@@ -9,12 +9,18 @@
         }
 
         public function getProducts() {
-           $result = $this->_db->query("SELECT * FROM `products` WHERE `");
+           $result = $this->_db->query("SELECT * FROM `products` ORDER BY `id` DESC");
+           return $result->fetchAll(PDO::FETCH_ASSOC);
         }
 
         public function getProductsLimited($order, $limit) {
             $result = $this->_db->query("SELECT * FROM `products` ORDER BY $order DESC LIMIT $limit");
             return $result->fetchAll(PDO::FETCH_ASSOC);
         }
+
+        public function getProductsCategory($category) {
+            $result = $this->_db->query("SELECT * FROM `products` WHERE `category` = '$category' ORDER BY `id` DESC");
+            return $result->fetchAll(PDO::FETCH_ASSOC);
+         }
     
     }
