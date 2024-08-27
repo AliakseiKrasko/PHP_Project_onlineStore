@@ -18,7 +18,26 @@
         }
 
         public function dashboard() {
+
             $user = $this->model('UserModel');
+
+            if(isset($_POST['exit_btn'])) {
+              $user->logOut();
+              exit();
+            }
+
             $this->view('user/dashboard', $user->getUser());
+        }
+
+        public function auth() {
+
+            if(isset($_POST['email'])) {
+                $data = [];
+                $user = $this->model('UserModel');
+                $data['message'] = $user->auth($_POST['email'], $_POST['pass']);
+                
+              }
+
+            $this->view('user/auth', $data);
         }
     }

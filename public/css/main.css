@@ -121,6 +121,11 @@ header .btn.basket {
   border: 1px solid #333;
 }
 
+header .btn.dashboard {
+  width: 200px;
+  background: red;
+}
+
 .btn:hover {
   transition: all 600ms ease;
   transform: scale(1.05) translateY(-5px);
