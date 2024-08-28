@@ -1,9 +1,18 @@
+<<<<<<< HEAD
 .form-control {
     width: 500px;
 }
 
 .form-control input,
 .form-control textarea {
+=======
+.form-controll {
+    width: 500px;
+}
+
+.form-controll input,
+.form-controll textarea {
+>>>>>>> 1b0c10aea21433f5a1ccce6ddf004801ea02731f
     width: 100%;
     background: #fcfcfc;
     border: 1px solid silver;
@@ -14,11 +23,16 @@
     color: #333;
 }
 
+<<<<<<< HEAD
 .form-control textarea {
+=======
+.form-controll textarea {
+>>>>>>> 1b0c10aea21433f5a1ccce6ddf004801ea02731f
     height: 200px;
     resize: none;
 }
 
+<<<<<<< HEAD
 .form-control .btn {
     margin-left: 0;
     margin-top: 15px;
@@ -26,6 +40,15 @@
 }
 
 .form-control .error {
+=======
+.form-controll .btn {
+    margin-top: 15px;
+    margin-left: 0;
+    background: #ff5644;
+}
+
+.form-controll .error {
+>>>>>>> 1b0c10aea21433f5a1ccce6ddf004801ea02731f
     color: #ff5644;
     font-weight: 600;
     margin-top: 10px;

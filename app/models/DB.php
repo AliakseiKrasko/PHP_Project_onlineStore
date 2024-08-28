@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?php
 class DB {
     private static $_db = null;
@@ -23,3 +24,20 @@ class DB {
         // Если нужно восстановить состояние объекта, сделайте это здесь
     }
 }
+=======
+<?php
+    class DB {
+        private static $_db = null;
+
+        public static function getInstence() {
+            if(self::$_db == null)
+            self::$_db = new PDO('mysql:host=localhost;dbname=ecommerce', username:'root', password:'992301');
+
+            return self::$_db;
+        }
+
+        private function __construct() {}
+        private function __clone() {}
+        public function __wakeup() {}
+    }
+>>>>>>> 1b0c10aea21433f5a1ccce6ddf004801ea02731f

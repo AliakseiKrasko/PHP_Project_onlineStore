@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?php
     class User extends Controller {
         public function reg() {
@@ -73,4 +74,48 @@
 
             $this->view('user/auth', $data);
         }
+=======
+<?php
+    class User extends Controller {
+        public function reg() {
+
+            $data = [];
+            if(isset($_POST['name'])) {
+                $user = $this->model('UserModel');
+                $user->setData($_POST['name'], $_POST['email'], $_POST['pass'], $_POST['re_pass']);
+
+                $isValid = $user->validForm();
+                if($isValid == "Верно")
+                    $user->addUser();
+                else
+                    $data['message'] = $isValid;
+            }
+
+            $this->view('user/reg', $data);
+        }
+
+        public function dashboard() {
+
+            $user = $this->model('UserModel');
+
+            if(isset($_POST['exit_btn'])) {
+              $user->logOut();
+              exit();
+            }
+
+            $this->view('user/dashboard', $user->getUser());
+        }
+
+        public function auth() {
+
+            if(isset($_POST['email'])) {
+                $data = [];
+                $user = $this->model('UserModel');
+                $data['message'] = $user->auth($_POST['email'], $_POST['pass']);
+                
+              }
+
+            $this->view('user/auth', $data);
+        }
+>>>>>>> 1b0c10aea21433f5a1ccce6ddf004801ea02731f
     }
